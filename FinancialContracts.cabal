@@ -1,0 +1,41 @@
+name:                 FinancialContracts
+version:              0.1.0.0
+synopsis:             A framework to build build and price financial contract
+-- description:
+-- license:
+-- license-file:
+homepage:
+author:               Alexey Pirogov
+maintainer:           pirogov.alexey@gmail.com
+category:
+-- copyright:
+build-type:           Simple
+-- extra-source-files:
+cabal-version:        >=1.10
+
+library
+--executable FinancialContracts
+--  main-is:              Main.hs
+--  other-modules:
+  -- other-extensions:
+  hs-source-dirs:       src
+  ghc-options:          -Wall
+  build-depends:        base >= 4.9 && < 5
+                      , time >= 1.6.0.1
+                      , hspec
+  exposed-modules:      Contract.Contract
+                      , Contract.Valuation
+                      , Contract.FixedFXAndRatesModel
+  default-language:     Haskell2010
+
+test-suite unit-tests
+  type:                 exitcode-stdio-1.0
+  main-is:              Spec.hs
+  hs-source-dirs:       test
+  ghc-options:          -Wall
+  build-depends:        base
+                      , FinancialContracts
+                      , hspec
+                      , hspec-discover
+  other-modules:        Contract.FixedFXAndRatesModelSpec
+  default-language:     Haskell2010
