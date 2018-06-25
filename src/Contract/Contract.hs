@@ -138,9 +138,6 @@ date = Obs (\t -> PR $ timeSlices [t])
 time0 :: Date
 time0 = mkDate 0
 
-date :: String -> Date
-date = undefined
-
 bigK :: a -> PR a
 bigK x = PR (konstSlices x)
 
